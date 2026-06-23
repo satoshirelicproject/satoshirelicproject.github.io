@@ -493,3 +493,65 @@ footer p:first-child {
     transition: none !important;
   }
 }
+.tokenomics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.token-card {
+  position: relative;
+  padding: 1.25rem;
+  border-radius: 22px;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)),
+    rgba(15, 23, 42, 0.92);
+  box-shadow: 0 14px 35px rgba(0,0,0,0.22);
+  overflow: hidden;
+}
+
+.token-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(139,92,246,0.12), transparent 35%);
+  pointer-events: none;
+}
+
+.token-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.token-card h3 {
+  margin: 0.8rem 0 0.45rem;
+  font-size: 1.8rem;
+  letter-spacing: -0.03em;
+}
+
+.token-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.token-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(34, 211, 238, 0.22);
+  background: rgba(34, 211, 238, 0.12);
+  color: #ddfbff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .tokenomics-grid {
+    grid-template-columns: 1fr;
+  }
+}
